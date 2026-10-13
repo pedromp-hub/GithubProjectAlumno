@@ -27,12 +27,16 @@ class AlumnoController extends Controller
     
     public function index(): View {
         //
-        return view('index', []);
+        // $alumnos = 'select * from alumno';
+        $alumnos = Alumno::all();
+        // dd($alumnos);
+        return view('alumno.index', ['alumnos' => $alumnos]);
     }
 
     public function show(Alumno $alumno): View {
         //
-        return view('index', []);
+        dd($alumno);
+        return view('alumno.show', ['alumno' => $alumno]);
     }
 
     // public function store(Request $request): RedirectResponse {

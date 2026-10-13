@@ -5,7 +5,8 @@
     <div class="row">
         <div class="col-md-6 mx-auto">
             <form action="{{ route ('alumno.store')}} " method="post">
-                @csrf
+                @csrf /* medida de seguridad que se usa con todas las rutas que no sean get */
+                /*Introduce un token en el formulario*/
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" required maxlength="100" placeholder="Introduce el nombre del alumno">
