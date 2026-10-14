@@ -41,9 +41,12 @@
             </div>
         </nav>
         <!-- Masthead-->
+        
         <header class="masthead bg-primary text-white text-center">
+            @yield('before-content')
             @yield('content')
             @yield('content-before')
+            @yield('after-content')
             <!-- directiva de blade (@WORD) que crea un referencia que cuando herede puedo rellenar -->
         </header>
 

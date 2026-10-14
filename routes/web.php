@@ -14,7 +14,7 @@ Route::get('portfolio', [MainController::class, 'portfolio'])->name('portfolio')
 //LAS 7 RUTAS
 Route::get('alumno/create', [AlumnoController::class, 'create'])->name('alumno.create');
 Route::post('alumno', [AlumnoController::class, 'store'])->name('alumno.store');
-// Route::get('alumno/edit', [AlumnoController::class, 'edit'])->name('alumno.edit');
+Route::get('alumno/{alumno}/edit', [AlumnoController::class, 'edit'])->name('alumno.edit');
 Route::get('alumno', [AlumnoController::class, 'index'])->name('alumno.index');
-// Route::put('alumno', [AlumnoController::class, 'update'])->name('alumno.update');
+Route::put('alumno/{alumno}', [AlumnoController::class, 'update'])->name('alumno.update');
 Route::get('alumno/{alumno}', [AlumnoController::class, 'show'])->name('alumno.show');
