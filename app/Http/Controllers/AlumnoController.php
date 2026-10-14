@@ -16,8 +16,8 @@ class AlumnoController extends Controller
     }
     
     public function destroy(Alumno $alumno): RedirectResponse {
-        //
-        return redirect()->route('index');
+        dd(['destroy', $alumno]);
+        //return redirect()->route('index');
     }
 
     public function edit(Alumno $alumno): View{

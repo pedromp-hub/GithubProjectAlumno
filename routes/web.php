@@ -18,3 +18,4 @@ Route::get('alumno/{alumno}/edit', [AlumnoController::class, 'edit'])->name('alu
 Route::get('alumno', [AlumnoController::class, 'index'])->name('alumno.index');
 Route::put('alumno/{alumno}', [AlumnoController::class, 'update'])->name('alumno.update');
 Route::get('alumno/{alumno}', [AlumnoController::class, 'show'])->name('alumno.show');
+Route::delete('alumno/{alumno}', [AlumnoController::class, 'destroy'])-> name('alumno.destroy');
