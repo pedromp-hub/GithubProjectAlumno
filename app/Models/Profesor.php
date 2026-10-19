@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profesor extends Model
 {
-    //
+    //esto es el modelo que corresponde a la migración de Alumno
+    //el nombre del ORM de laravel es Eloquent
+
+    //nombre de la tabla
+    protected $table = 'profesor';
+    
+    //campos que hay que rellenar antes de guardar un objeto en la base de datos
+    protected $fillable = ['nombre', 'apellidos', 'especialidad', 'fecalta', 'salario'];
 }
