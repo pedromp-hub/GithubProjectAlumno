@@ -4,16 +4,33 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 mx-auto">
+
+            @error('claveunica')
+            <div class="alert alert-danger" role="alert">
+                {{ $message }}
+            </div>
+            @enderror
+
             <form action="{{ route ('alumno.store')}} " method="post">
                  @csrf <!--/* medida de seguridad que se usa con todas las rutas que no sean get */
                 /*Introduce un token en el formulario*/ -->
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" value="" class="form-control" id="nombre" name="nombre" required maxlength="100" placeholder="Introduce el nombre del alumno">
+                    @error('nombre')
+                        <div class="alert alert-danger" role="alert">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
                 <div class="mb-3">
                     <label for="apellidos" class="form-label">Apellidos</label>
                     <input type="text" value="" class="form-control" id="apellidos" name="apellidos" required maxlength="130" placeholder="Introduce los apellidos del alumno">
+                    @error('apellidos')
+                        <div class="alert alert-danger" role="alert">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
                 <div class="mb-3">
                     <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento</label>

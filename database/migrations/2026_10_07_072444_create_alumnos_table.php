@@ -19,6 +19,7 @@ return new class extends Migration
             $table->enum('genero', ['masculino', 'femenino', 'otro'])->nullable();
             $table->decimal('nacceso', 4, 2)->nullable();
             $table->timestamps();
+            $table->unique(['nombre', 'apellidos']);
         });
     }
 

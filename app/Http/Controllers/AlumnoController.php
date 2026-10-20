@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alumno;
+use \Exception;
+use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -43,7 +45,18 @@ class AlumnoController extends Controller
     public function store(Request $request): RedirectResponse {
         //
         $alumno = new Alumno($request ->all());
-        $alumno->save();
+        try {
+            $alumno->save();
+        } catch(UniqueConstraintViolationException $e) {
+            return back()->withInput()->withErrors([
+                'claveunica' => 'Clave única duplicada.',
+                'nombre'     => 'Este campo forma parte de la clave única',
+                'apellidos'  => 'Este campo también forma parte de la clave única',
+            ]);
+        } catch(Exception $e) {
+            echo('global');
+            dd($e);
+        }
         return redirect() -> route('alumno.index');
     }
 
