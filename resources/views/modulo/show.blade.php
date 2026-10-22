@@ -20,7 +20,7 @@
             <div class="card text-center">
                 <div class="card-body">
                     <h6 class="card-title">{{ $modulo->horas }}h</h6>
-                    <h6 class="card-title">{{$modulo->creditos }}</h6>
+                    <h6 class="card-title">{{$modulo->creditos }}créditos</h6>
                     <a href="{{ route('modulo.index')  }}" class="btn btn-secondary">Back</a>
                     <a href="{{ url()->previous()  }}" class="btn btn-secondary">Back</a>
                 </div>
