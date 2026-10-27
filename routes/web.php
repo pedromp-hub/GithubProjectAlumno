@@ -3,13 +3,17 @@
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProfesorController;
+use App\Http\Controllers\MatriculaController;
 use App\Http\Controllers\ModuloController;
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('about', [MainController::class, 'about'])->name('about');
 Route::get('array', [MainController::class, 'array'])->name('array');
+Route::get('array', [MainController::class, 'array'])->name('array');
 Route::get('portfolio', [MainController::class, 'portfolio'])->name('portfolio');
+Route::get('gestion', [MainController::class, 'gestion'])->name('gestion');
 
 //Route::get('aboutRuta', [MainController::class, 'aboutMetodo'])->name('aboutNombre');
 
@@ -35,12 +39,6 @@ Route::resource('profesor', ProfesorController::class);
 
 //LAS 7 RUTAS DE MODULO
 Route::resource('modulo', ModuloController::class);
+Route::resource('matricula', MatriculaController::class);
 
 
-Route::get('/', [MainController::class, 'index'])->name('index');
-Route::get('about', [MainController::class, 'about'])->name('about');
-Route::get('array', [MainController::class, 'array'])->name('array');
-Route::get('a/r/r/a/y', [MainController::class, 'array'])->name('array');
-//Route::get('aboutRuta', [MainController::class, 'aboutMetodo'])->name('aboutNombre');
-Route::get('portfolio', [MainController::class, 'portfolio'])->name('portfolio');
-Route::get('gestion', [MainController::class, 'gestion'])->name('gestion');
