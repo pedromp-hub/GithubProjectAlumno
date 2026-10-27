@@ -57,6 +57,10 @@ class MainController extends Controller
         return view('about');
     }*/
 
+    function gestion(): View {
+        return view('gestion');
+    }
+
     function index(): View {
         return view('index');
     }
