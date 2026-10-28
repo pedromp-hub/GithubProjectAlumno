@@ -46,7 +46,7 @@
     document.querySelectorAll('form.confirm-dialog').forEach(
         form => {
             form.addEventListener('submit', e => {
-                const message = '¿Seguro que quieres borrar al alumno ' + form.dataset.message + '?'
+                const message = '¿Seguro que quieres borrar al profesor ' + form.dataset.message + '?'
                 if (!confirm(message)) {
                     e.preventDefault();
                 }
