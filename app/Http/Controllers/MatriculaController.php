@@ -42,7 +42,15 @@ class MatriculaController extends Controller
 
     }
 
-    public function index()
+    public function index(): View {
+        $matriculas = Matricula::all();
+        //$matriculas = Matriculas::orderBy('alfabeticamente')->get();
+        return view('matricula.index', [
+            'matriculas' => $matriculas
+        ]);
+    }
+
+    public function index2()
     {
         $lista = [
             'uno'  => 121,
