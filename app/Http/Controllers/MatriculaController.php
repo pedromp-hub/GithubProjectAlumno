@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Alumno;
 use App\Models\Matricula;
 use App\Models\Modulo;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
@@ -26,21 +25,6 @@ class MatriculaController extends Controller
             'modulo_id' => 'required|numeric|exists:modulo,id',
             
     ];
-
-    private function getCurso(): Int {
-        //Si el mes es 9 o mayor año actual, sino año anterior
-        if(Carbon::now()->month >= 9) {
-            return Carbon::now()->year;
-        } else {
-            return Carbon::now()->year - 1;
-        }
-    }
-
-    private function getCursoEscolar(): String {
-        return $this->getCurso() . '/' . $this->getCurso() + 1;
-
-
-    }
 
     public function index(): View {
         $matriculas = Matricula::all();
@@ -88,7 +72,7 @@ class MatriculaController extends Controller
         $matricula->curso = $this->getCurso();
         try {
             $matricula->save();
-            return redirect() -> route('matricula.create')->with(['success' => 'Se ha matriculado correctamente']);
+            return back() ->with(['success' => 'Se ha matriculado correctamente']);
         } catch(\Exception $e) {
             return back()->withInput()->withErrors([
                 'error' => 'Error al matricular.',

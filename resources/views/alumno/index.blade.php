@@ -32,6 +32,7 @@
                                     @method('delete')
                                     <input type="submit" value="Delete" class="btn btn-secondary">
                                 </form>
+                                <a href="{{ route('alumno.matricular', $alumno) }}" class="btn btn-secondary">Matriculas</a>
                             </td>
                         </tr>
                     @endforeach

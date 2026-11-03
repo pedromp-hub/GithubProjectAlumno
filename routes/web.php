@@ -40,5 +40,6 @@ Route::resource('profesor', ProfesorController::class);
 //LAS 7 RUTAS DE MODULO
 Route::resource('modulo', ModuloController::class);
 Route::resource('matricula', MatriculaController::class);
+Route::get('alumno/{alumno}/matricular', [AlumnoController::class, 'matricular'])->name('alumno.matricular');
 
 
