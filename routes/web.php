@@ -41,5 +41,7 @@ Route::resource('profesor', ProfesorController::class);
 Route::resource('modulo', ModuloController::class);
 Route::resource('matricula', MatriculaController::class);
 Route::get('alumno/{alumno}/matricular', [AlumnoController::class, 'matricular'])->name('alumno.matricular');
+Route::post('matricula/{alumno}/make', [MatriculaController::class, 'make'])->name('matricula.make');
+Route::post('matricula/storemodules', [MatriculaController::class, 'storeModules'])->name('matricula.storemodules');
 
 
